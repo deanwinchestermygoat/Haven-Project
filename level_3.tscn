@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dhrlh58k2ijcx"]
+
+[ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://platform.tscn" id="1_16pka"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="3_1jdk1"]
+[ext_resource type="PackedScene" uid="uid://cy2nfjwv3i4e0" path="res://main_player#3.tscn" id="3_16pka"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxqgl"]
+size = Vector2(126, 129)
+
+[node name="level3" type="Node2D" unique_id=1017670947]
+
+[node name="platform" parent="." unique_id=1930638987 instance=ExtResource("1_16pka")]
+position = Vector2(-36, 117)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=890218929]
+position = Vector2(179, 72)
+texture = ExtResource("3_1jdk1")
+
+[node name="thrid" type="Area2D" parent="Sprite2D" unique_id=1198353929]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/thrid" unique_id=752585845]
+position = Vector2(1, -1.5)
+shape = SubResource("RectangleShape2D_pxqgl")
+
+[node name="Main_player#3" parent="." unique_id=1284068795 instance=ExtResource("3_16pka")]
+
+[connection signal="body_entered" from="Sprite2D/thrid" to="Main_player#3" method="_on_thrid_body_entered"]
