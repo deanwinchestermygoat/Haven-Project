@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://cfu1anlcy36mi"]
+
+[ext_resource type="Texture2D" uid="uid://cn73fqixhqacx" path="res://text box.png" id="1_0743d"]
+[ext_resource type="Texture2D" uid="uid://dbu8rkjf88w6w" path="res://chocolate caku.png" id="2_tukts"]
+[ext_resource type="FontFile" uid="uid://c8xlyi24xpfu4" path="res://SugarFlareDemoRegular-4nGED.otf" id="3_v5trg"]
+[ext_resource type="Texture2D" uid="uid://ddydn6u84r4e4" path="res://strawberry caku.png" id="4_d5loq"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="5_paboe"]
+
+[sub_resource type="GDScript" id="GDScript_xwgne"]
+script/source = "extends RichTextLabel
+var text_number = 0
+var click_state = false
+@onready var text_box: TextureRect = $\"../Text Box\"
+@onready var rich_text_label: RichTextLabel = $\".\"
+@onready var button: Button = $\"../Button\"
+@onready var button_2: Button = $\"../Button2\"
+@onready var andrew_image: TextureRect = $\"../TextureRect2\"
+@onready var chef_image: TextureRect = $\"../TextureRect3\"
+var text_content1: Array[String] = [
+		\"Andrew: So.. what was that?\",
+		\"Chef: What was what?\",
+		\"Andrew: How'd you win a baking competition with SOUP?\",
+		\"Chef: Your cake was just that bad. Maybe you should stick to microwaving instant ramen.\",
+		\"[exit_chef]\",
+		\"Andrew: Wow. I guess I just have to bake the best cake in the world to prove him wrong!\",
+		\"Andrew: Now where to start…\",
+		\"Andrew: So it says right here.. Best cake recipes for experienced bakers.\",
+		\"Andrew: I'm an experienced baker right?\",
+		\"[choice]\",
+	]
+var speaker_name = \"\"
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	button.hide()
+	button_2.hide()
+	
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed(\"leftclick\"):
+		click_state = not click_state
+	if click_state == true:
+		text_number+=1
+		click_state = not click_state
+		if text_number>3:
+			rich_text_label.hide()
+			text_box.hide()
+			andrew_image.hide()
+			chef_image.hide()
+			text_number = 0
+		else:
+			text = text_content1[text_number]
+			speaker_name = text_content1[text_number].get_slice(\" \", 0)
+			if speaker_name == \"Andrew:\":
+				chef_image.hide()
+				andrew_image.show()
+			elif speaker_name == \"Chef:\":
+				andrew_image.hide()
+				chef_image.show()
+			else:
+				andrew_image.hide()
+				chef_image.hide()
+
+	
+		
+	
+"
+
+[node name="Text Aspect2" type="Node2D" unique_id=799201127]
+
+[node name="Text Interactions" type="Node" parent="." unique_id=1288048653]
+
+[node name="Text Box" type="TextureRect" parent="Text Interactions" unique_id=2005708932]
+offset_left = -124.0
+offset_top = 246.0
+offset_right = 2103.4192
+offset_bottom = 1249.2258
+scale = Vector2(0.62, 0.62)
+texture = ExtResource("1_0743d")
+expand_mode = 3
+
+[node name="Button" type="Button" parent="Text Interactions" unique_id=370140371]
+offset_left = 594.0
+offset_top = 194.0
+offset_right = 1028.0
+offset_bottom = 758.0
+icon = ExtResource("2_tukts")
+flat = true
+expand_icon = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Text Interactions" unique_id=1680083397]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.97200006
+anchor_bottom = 0.79
+offset_left = 132.0
+offset_top = 104.0
+offset_right = -73.74402
+offset_bottom = 37.079987
+theme_override_colors/default_color = Color(0.93333334, 0.41960785, 0.77254903, 1)
+theme_override_fonts/normal_font = ExtResource("3_v5trg")
+theme_override_font_sizes/normal_font_size = 30
+script = SubResource("GDScript_xwgne")
+
+[node name="Button2" type="Button" parent="Text Interactions" unique_id=848184376]
+offset_left = 106.0
+offset_top = 288.0
+offset_right = 522.0
+offset_bottom = 901.0
+icon = ExtResource("4_d5loq")
+flat = true
+expand_icon = true
+
+[node name="TextureRect2" type="TextureRect" parent="Text Interactions" unique_id=414696465]
+offset_left = 100.0
+offset_top = 85.0
+offset_right = 285.0
+offset_bottom = 361.0
+texture = ExtResource("5_paboe")
+
+[node name="TextureRect3" type="TextureRect" parent="Text Interactions" unique_id=58447825]
+offset_left = 826.0
+offset_top = 91.0
+offset_right = 1011.0
+offset_bottom = 367.0
+texture = ExtResource("5_paboe")

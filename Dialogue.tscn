@@ -6,38 +6,68 @@
 [ext_resource type="Texture2D" uid="uid://dbu8rkjf88w6w" path="res://chocolate caku.png" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="5_q6r6c"]
 
-[sub_resource type="GDScript" id="GDScript_xwgne"]
+[sub_resource type="GDScript" id="GDScript_5h13y"]
+resource_name = "First"
 script/source = "extends RichTextLabel
-var text_number = 0
+var text_number = -1
 var click_state = false
+var waiting_for_choice = false
 @onready var text_box: TextureRect = $\"../Text Box\"
 @onready var rich_text_label: RichTextLabel = $\".\"
 @onready var button: Button = $\"../Button\"
 @onready var button_2: Button = $\"../Button2\"
 @onready var andrew_image: TextureRect = $\"../TextureRect2\"
 @onready var chef_image: TextureRect = $\"../TextureRect3\"
-var text_content1: Array[String] = [\"Andrew: Hi\",\"Chef: Hello\", \"Andrew: Howdy\", \"Chef: Hola\" ]
+var text_content1: Array = [
+		\"Andrew: So.. what was that?\",
+		\"Chef: What was what?\",
+		\"Andrew: How'd you win a baking competition with SOUP?\",
+		\"Chef: Your cake was just that bad. Maybe you should stick to microwaving instant ramen.\",
+		\"[exit_chef]\",
+		\"Andrew: Wow. I guess I just have to bake the best cake in the world to prove him wrong!\",
+		\"Andrew: Now where to start…\",
+		\"[fade_kitchen]\",
+		\"Andrew: So it says right here.. Best cake recipes for experienced bakers.\",
+		\"Andrew: I'm an experienced baker right?\",
+		\"[choice]\",
+	]
 var speaker_name = \"\"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	button.hide()
 	button_2.hide()
-	
+	button.pressed.connect(_on_choice.bind(true))
+	button_2.pressed.connect(_on_choice.bind(false))
+func _on_choice(yes: bool) -> void:
+	waiting_for_choice = false
+	button.hide()
+	button_2.hide()
+	text_content1 = [\"Andrew: Alright! Looks like the first ingredient is milk.\"] if yes else [\"Andrew: What?? Alright then.. Top 10 easy dessert recipes for dummies..\"]
+	text_number = -1
+	click_state = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed(\"leftclick\"):
+	if Input.is_action_just_pressed(\"leftclick\") and not waiting_for_choice:
 		click_state = not click_state
 	if click_state == true:
 		text_number+=1
 		click_state = not click_state
-		if text_number>3:
+		if text_number>=text_content1.size():
 			rich_text_label.hide()
 			text_box.hide()
+			andrew_image.hide()
+			chef_image.hide()
 			text_number = 0
 		else:
 			text = text_content1[text_number]
+			if text == \"[choice]\":
+				text = text_content1[text_number - 1] 
+				waiting_for_choice = true
+				button.show()
+				button_2.show()
+				return
 			speaker_name = text_content1[text_number].get_slice(\" \", 0)
 			if speaker_name == \"Andrew:\":
 				chef_image.hide()
@@ -45,10 +75,6 @@ func _process(delta: float) -> void:
 			elif speaker_name == \"Chef:\":
 				andrew_image.hide()
 				chef_image.show()
-			else:
-				andrew_image.hide()
-				chef_image.hide()
-
 	
 		
 	
@@ -88,7 +114,7 @@ offset_bottom = 37.079987
 theme_override_colors/default_color = Color(0.93333334, 0.41960785, 0.77254903, 1)
 theme_override_fonts/normal_font = ExtResource("2_0hol4")
 theme_override_font_sizes/normal_font_size = 30
-script = SubResource("GDScript_xwgne")
+script = SubResource("GDScript_5h13y")
 
 [node name="Button2" type="Button" parent="Text Interactions" unique_id=848184376]
 offset_left = 106.0
