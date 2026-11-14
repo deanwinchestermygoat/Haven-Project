@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://brd061ft225wp"]
+
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_rolgg"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_rojf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxqgl"]
+size = Vector2(7, 8)
+
+[node name="PLayer" type="Node2D" unique_id=1045366117]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=505178529]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=577485388]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Area2D" unique_id=310288880]
+position = Vector2(-2.3839554e-08, -3.7273073)
+rotation = 3.1415927
+scale = Vector2(9.58, 10.125385)
+mesh = SubResource("QuadMesh_rojf5")
+texture = ExtResource("1_rolgg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2026603702]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_pxqgl")
