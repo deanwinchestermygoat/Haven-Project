@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c5mxp8gtey0y2"]
+
+[ext_resource type="Texture2D" uid="uid://oqkjrvwq15rj" path="res://skillcheck5.png" id="1_ebe7b"]
+[ext_resource type="Script" uid="uid://d3880l1mi8y1t" path="res://qtebar.gd" id="1_gfoop"]
+[ext_resource type="Texture2D" uid="uid://bvxknp4vqa0iy" path="res://whisk.png" id="3_gfoop"]
+
+[node name="Node2D" type="Node2D" unique_id=1548456441]
+script = ExtResource("1_gfoop")
+
+[node name="QTE bar" type="Node" parent="." unique_id=428109476]
+
+[node name="background" type="Sprite2D" parent="QTE bar" unique_id=2110196344]
+position = Vector2(687, 984)
+texture = ExtResource("1_ebe7b")
+
+[node name="pointer" type="Sprite2D" parent="QTE bar" unique_id=431120598]
+position = Vector2(613.8146, 252.5469)
+scale = Vector2(0.4138092, 0.5967158)
+texture = ExtResource("3_gfoop")
+
+[node name="start" type="Marker2D" parent="QTE bar" unique_id=1109363709]
+position = Vector2(205, 524)
+
+[node name="end" type="Marker2D" parent="QTE bar" unique_id=1679847407]
+position = Vector2(952, 518)
+
+[node name="safestartpos" type="Marker2D" parent="QTE bar" unique_id=1734858350]
+position = Vector2(455, 525)
+
+[node name="safeendpos" type="Marker2D" parent="QTE bar" unique_id=1000599338]
+position = Vector2(705, 524)

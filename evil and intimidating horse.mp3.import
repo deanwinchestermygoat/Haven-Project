@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxmfj1neop7cu"
+path="res://.godot/imported/evil and intimidating horse.mp3-f70d37da33cb4008506648b196493fd9.mp3str"
+
+[deps]
+
+source_file="res://evil and intimidating horse.mp3"
+dest_files=["res://.godot/imported/evil and intimidating horse.mp3-f70d37da33cb4008506648b196493fd9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
