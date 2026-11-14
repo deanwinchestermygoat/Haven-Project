@@ -1,14 +1,22 @@
 [gd_scene format=3 uid="uid://4pqund3nukl7"]
 
 [ext_resource type="Texture2D" uid="uid://cn73fqixhqacx" path="res://text box.png" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://ddydn6u84r4e4" path="res://strawberry caku.png" id="2_0e48y"]
+[ext_resource type="FontFile" uid="uid://c8xlyi24xpfu4" path="res://SugarFlareDemoRegular-4nGED.otf" id="2_0hol4"]
+[ext_resource type="Texture2D" uid="uid://dbu8rkjf88w6w" path="res://chocolate caku.png" id="2_epypp"]
 
 [sub_resource type="GDScript" id="GDScript_xwgne"]
 script/source = "extends RichTextLabel
 var text_number = 0
 var click_state = false
+@onready var rich_text_label: RichTextLabel = $\".\"
+@onready var button: Button = $\"../Button\"
+@onready var button_2: Button = $\"../Button2\"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	button.hide()
+	button_2.hide()
 	
 
 
@@ -20,11 +28,12 @@ func _process(delta: float) -> void:
 	if click_state == true:
 		text_number+=1
 		click_state = not click_state
-	text = text_content[text_number%4]
-	print(click_state)
+		if text_number>3:
+			rich_text_label.hide()
+		else:
+			text = text_content[text_number]
+	
 "
-
-[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_xwgne"]
 
 [node name="game" type="Node2D" unique_id=799201127]
 
@@ -39,6 +48,15 @@ scale = Vector2(0.62, 0.62)
 texture = ExtResource("1_wtcfe")
 expand_mode = 3
 
+[node name="Button" type="Button" parent="Text Interactions" unique_id=370140371]
+offset_left = 594.0
+offset_top = 194.0
+offset_right = 1028.0
+offset_bottom = 758.0
+icon = ExtResource("2_epypp")
+flat = true
+expand_icon = true
+
 [node name="RichTextLabel" type="RichTextLabel" parent="Text Interactions" unique_id=1680083397]
 anchors_preset = -1
 anchor_top = 0.5
@@ -48,19 +66,15 @@ offset_left = 132.0
 offset_top = 104.0
 offset_right = -73.74402
 offset_bottom = 37.079987
+theme_override_fonts/normal_font = ExtResource("2_0hol4")
 theme_override_font_sizes/normal_font_size = 30
 script = SubResource("GDScript_xwgne")
 
-[node name="Button" type="Button" parent="Text Interactions" unique_id=370140371]
-offset_left = 666.0
-offset_top = 565.0
-offset_right = 1047.0
-offset_bottom = 639.0
-icon = SubResource("PortableCompressedTexture2D_xwgne")
-
 [node name="Button2" type="Button" parent="Text Interactions" unique_id=848184376]
-offset_left = 134.0
-offset_top = 563.0
-offset_right = 515.0
-offset_bottom = 637.0
-icon = SubResource("PortableCompressedTexture2D_xwgne")
+offset_left = 106.0
+offset_top = 288.0
+offset_right = 522.0
+offset_bottom = 901.0
+icon = ExtResource("2_0e48y")
+flat = true
+expand_icon = true
