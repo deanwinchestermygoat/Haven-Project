@@ -4,15 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://ddydn6u84r4e4" path="res://strawberry caku.png" id="2_0e48y"]
 [ext_resource type="FontFile" uid="uid://c8xlyi24xpfu4" path="res://SugarFlareDemoRegular-4nGED.otf" id="2_0hol4"]
 [ext_resource type="Texture2D" uid="uid://dbu8rkjf88w6w" path="res://chocolate caku.png" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="5_q6r6c"]
 
 [sub_resource type="GDScript" id="GDScript_xwgne"]
 script/source = "extends RichTextLabel
 var text_number = 0
 var click_state = false
+@onready var text_box: TextureRect = $\"../Text Box\"
 @onready var rich_text_label: RichTextLabel = $\".\"
 @onready var button: Button = $\"../Button\"
 @onready var button_2: Button = $\"../Button2\"
-
+@onready var andrew_image: TextureRect = $\"../TextureRect2\"
+@onready var chef_image: TextureRect = $\"../TextureRect3\"
+var text_content1: Array[String] = [\"Andrew: Hi\",\"Chef: Hello\", \"Andrew: Howdy\", \"Chef: Hola\" ]
+var speaker_name = \"\"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	button.hide()
@@ -22,7 +27,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var text_content: Array[String] = [\"Hi\",\"Hello\", \"Howdy\", \"Hola\" ]
 	if Input.is_action_just_pressed(\"leftclick\"):
 		click_state = not click_state
 	if click_state == true:
@@ -30,8 +34,23 @@ func _process(delta: float) -> void:
 		click_state = not click_state
 		if text_number>3:
 			rich_text_label.hide()
+			text_box.hide()
+			text_number = 0
 		else:
-			text = text_content[text_number]
+			text = text_content1[text_number]
+			speaker_name = text_content1[text_number].get_slice(\" \", 0)
+			if speaker_name == \"Andrew:\":
+				chef_image.hide()
+				andrew_image.show()
+			elif speaker_name == \"Chef:\":
+				andrew_image.hide()
+				chef_image.show()
+			else:
+				andrew_image.hide()
+				chef_image.hide()
+
+	
+		
 	
 "
 
@@ -39,7 +58,7 @@ func _process(delta: float) -> void:
 
 [node name="Text Interactions" type="Node" parent="." unique_id=1288048653]
 
-[node name="TextureRect" type="TextureRect" parent="Text Interactions" unique_id=2005708932]
+[node name="Text Box" type="TextureRect" parent="Text Interactions" unique_id=2005708932]
 offset_left = -124.0
 offset_top = 246.0
 offset_right = 2103.4192
@@ -79,3 +98,17 @@ offset_bottom = 901.0
 icon = ExtResource("2_0e48y")
 flat = true
 expand_icon = true
+
+[node name="TextureRect2" type="TextureRect" parent="Text Interactions" unique_id=414696465]
+offset_left = 100.0
+offset_top = 85.0
+offset_right = 285.0
+offset_bottom = 361.0
+texture = ExtResource("5_q6r6c")
+
+[node name="TextureRect3" type="TextureRect" parent="Text Interactions" unique_id=58447825]
+offset_left = 826.0
+offset_top = 91.0
+offset_right = 1011.0
+offset_bottom = 367.0
+texture = ExtResource("5_q6r6c")

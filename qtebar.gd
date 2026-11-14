@@ -5,6 +5,8 @@ extends Node
 @onready var safestartpos: Marker2D = $"QTE bar/safestartpos"
 @onready var safeendpos: Marker2D = $"QTE bar/safeendpos"
 @onready var score_counter: RichTextLabel = $"QTE bar/scorecounter"
+
+
 var direction = 1
 var score = 0
 func _process(delta: float) -> void:
