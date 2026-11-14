@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://d3880l1mi8y1t" path="res://qtebar.gd" id="1_gfoop"]
 [ext_resource type="Texture2D" uid="uid://bvxknp4vqa0iy" path="res://whisk.png" id="3_gfoop"]
 
-[node name="Node2D" type="Node2D" unique_id=1548456441]
+[node name="QTE" type="Node2D" unique_id=1548456441]
 script = ExtResource("1_gfoop")
 
 [node name="QTE bar" type="Node" parent="." unique_id=428109476]
@@ -29,3 +29,12 @@ position = Vector2(455, 525)
 
 [node name="safeendpos" type="Marker2D" parent="QTE bar" unique_id=1000599338]
 position = Vector2(705, 524)
+
+[node name="scorecounter" type="RichTextLabel" parent="QTE bar" unique_id=1496677979]
+custom_minimum_size = Vector2(1.015, 0)
+offset_left = 418.0
+offset_top = 52.0
+offset_right = 780.0
+offset_bottom = 163.0
+theme_override_font_sizes/normal_font_size = 60
+text = "Score: 0"

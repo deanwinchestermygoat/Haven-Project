@@ -4,6 +4,7 @@ extends Node
 @onready var end: Marker2D = $"QTE bar/end"
 @onready var safestartpos: Marker2D = $"QTE bar/safestartpos"
 @onready var safeendpos: Marker2D = $"QTE bar/safeendpos"
+@onready var score_counter: RichTextLabel = $"QTE bar/scorecounter"
 var direction = 1
 var score = 0
 func _process(delta: float) -> void:
@@ -12,7 +13,8 @@ func _process(delta: float) -> void:
 	elif pointer.position.x>= end.position.x:
 		direction = -1
 	pointer.position.x +=25*direction
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("leftclick"):
 		if pointer.position.x >= safestartpos.position.x and pointer.position.x <= safeendpos.position.x: 
 			score+=1
-	print(score)
+	score_counter.text = ("Score= %d"%[score])
+	
