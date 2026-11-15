@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://oqkjrvwq15rj" path="res://skillcheck5.png" id="2_610y4"]
 [ext_resource type="Texture2D" uid="uid://bvyltj5rona5f" path="res://kitchen bg.png" id="2_vbltr"]
 [ext_resource type="Texture2D" uid="uid://bvxknp4vqa0iy" path="res://whisk.png" id="3_0wc6q"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="5_voyim"]
+[ext_resource type="Texture2D" uid="uid://ds0tuoujrjkh" path="res://bitch.png" id="4_0wc6q"]
 [ext_resource type="AudioStream" uid="uid://dcyvqaav0ottv" path="res://milk2.mp3" id="6_8df0h"]
 
 [sub_resource type="GDScript" id="GDScript_3mc1j"]
@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 		
 "
 
-[node name="QTE" type="Node2D" unique_id=1548456441]
+[node name="QTE3" type="Node2D" unique_id=1548456441]
 script = SubResource("GDScript_3mc1j")
 
 [node name="QTE bar" type="Node" parent="." unique_id=428109476]
@@ -101,11 +101,12 @@ offset_bottom = 545.0
 theme_override_font_sizes/normal_font_size = 60
 
 [node name="milk" type="TextureRect" parent="QTE bar" unique_id=62465292]
-offset_left = 471.0
-offset_top = 238.0
-offset_right = 599.0
-offset_bottom = 366.0
-texture = ExtResource("5_voyim")
+offset_left = 371.0
+offset_top = 17.0
+offset_right = 993.0
+offset_bottom = 532.0
+texture = ExtResource("4_0wc6q")
+expand_mode = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="QTE bar" unique_id=2145291837]
 stream = ExtResource("6_8df0h")

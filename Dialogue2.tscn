@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://dbu8rkjf88w6w" path="res://chocolate caku.png" id="2_m8ffq"]
 [ext_resource type="FontFile" uid="uid://c8xlyi24xpfu4" path="res://SugarFlareDemoRegular-4nGED.otf" id="3_g4lbu"]
 [ext_resource type="Texture2D" uid="uid://ddydn6u84r4e4" path="res://strawberry caku.png" id="4_ys4ex"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="5_3k16q"]
 [ext_resource type="Texture2D" uid="uid://doqj86pmoucr8" path="res://andrew .png" id="7_3k16q"]
 [ext_resource type="Texture2D" uid="uid://d3d6g5upggiv3" path="res://chef.png" id="7_ys4ex"]
 
@@ -132,18 +131,10 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="TextureRect2" type="TextureRect" parent="Text Interactions" unique_id=414696465]
-visible = false
-offset_left = 100.0
-offset_top = 220.0
-offset_right = 228.0
-offset_bottom = 361.0
-texture = ExtResource("5_3k16q")
-
-[node name="TextureRect4" type="TextureRect" parent="Text Interactions" unique_id=68106729]
-offset_left = -177.0
-offset_top = -12.0
-offset_right = 317.0
-offset_bottom = 641.0
+offset_left = -129.0
+offset_top = -48.0
+offset_right = 514.0
+offset_bottom = 705.0
 texture = ExtResource("7_3k16q")
 expand_mode = 1
 
