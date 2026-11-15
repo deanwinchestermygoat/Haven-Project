@@ -105,6 +105,9 @@ position = Vector2(5844, 736)
 position = Vector2(6427, 639)
 rotation = 1.5707964
 
+[node name="platform19" parent="." unique_id=10622384 instance=ExtResource("2_nc3bw")]
+position = Vector2(6687, 730)
+
 [node name="platform5" parent="." unique_id=1945825226 instance=ExtResource("2_nc3bw")]
 position = Vector2(1206, 428)
 rotation = 1.5707964

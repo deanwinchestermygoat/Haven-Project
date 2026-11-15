@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 		direction = 1
 	elif pointer.position.x>= end.position.x:
 		direction = -1
-	pointer.position.x +=25*direction
+	pointer.position.x +=19*direction
 	if Input.is_action_just_pressed("leftclick"):
 		if pointer.position.x >= safestartpos.position.x and pointer.position.x <= safeendpos.position.x: 
 			score+=1

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bvyltj5rona5f" path="res://kitchen bg.png" id="2_81wtu"]
 [ext_resource type="Texture2D" uid="uid://bvxknp4vqa0iy" path="res://whisk.png" id="3_gfoop"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="5_4uh6t"]
+[ext_resource type="AudioStream" uid="uid://dcyvqaav0ottv" path="res://milk2.mp3" id="6_sosbv"]
 
 [node name="QTE" type="Node2D" unique_id=1548456441]
 script = ExtResource("1_gfoop")
@@ -67,3 +68,7 @@ offset_top = 238.0
 offset_right = 599.0
 offset_bottom = 366.0
 texture = ExtResource("5_4uh6t")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="QTE bar" unique_id=2145291837]
+stream = ExtResource("6_sosbv")
+autoplay = true

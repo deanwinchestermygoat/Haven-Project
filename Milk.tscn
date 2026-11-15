@@ -69,6 +69,13 @@ shape = SubResource("RectangleShape2D_xwgne")
 position = Vector2(-132, 395)
 scale = Vector2(1.5, 1.5)
 
+[node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=899145994]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D6" unique_id=1099096614]
+position = Vector2(7890, 724)
+scale = Vector2(3.033333, 1.7930554)
+texture = ExtResource("1_nl0h0")
+
 [node name="platform3" parent="." unique_id=13679003 instance=ExtResource("4_vwxnn")]
 position = Vector2(1006, 734)
 scale = Vector2(1.5, 1.5)
@@ -101,6 +108,70 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(719, 734)
 scale = Vector2(1.5, 1.5)
 
+[node name="platform10" parent="." unique_id=789183532 instance=ExtResource("4_vwxnn")]
+position = Vector2(2561, 803)
+scale = Vector2(1.5, 1.5)
+
+[node name="platform11" parent="." unique_id=1715847607 instance=ExtResource("4_vwxnn")]
+position = Vector2(3096, 991.00006)
+scale = Vector2(1.5, 1.5)
+
+[node name="platform12" parent="." unique_id=1955711835 instance=ExtResource("4_vwxnn")]
+position = Vector2(3428, 745.00006)
+scale = Vector2(1.5, 1.5)
+
+[node name="platform16" parent="." unique_id=1367018178 instance=ExtResource("4_vwxnn")]
+position = Vector2(4610, 884.00006)
+scale = Vector2(1.5, 1.5)
+
+[node name="platform13" parent="." unique_id=755064137 instance=ExtResource("4_vwxnn")]
+position = Vector2(3994, 558.00006)
+scale = Vector2(1.5, 1.5)
+
+[node name="platform14" parent="." unique_id=1611426218 instance=ExtResource("4_vwxnn")]
+position = Vector2(4919, 1033)
+scale = Vector2(1.5, 1.5)
+
+[node name="platform17" parent="." unique_id=1730359675 instance=ExtResource("4_vwxnn")]
+position = Vector2(5276, 997.00006)
+scale = Vector2(1.5, 1.5)
+
+[node name="platform18" parent="." unique_id=1409514020 instance=ExtResource("4_vwxnn")]
+position = Vector2(5596, 939.00006)
+scale = Vector2(1.5, 1.5)
+
+[node name="platform19" parent="." unique_id=1819816469 instance=ExtResource("4_vwxnn")]
+position = Vector2(5933, 897)
+scale = Vector2(1.5, 1.5)
+
+[node name="platform15" parent="." unique_id=1522783045 instance=ExtResource("4_vwxnn")]
+position = Vector2(4307, 706)
+scale = Vector2(1.5, 1.5)
+
+[node name="platform21" parent="." unique_id=1482783259 instance=ExtResource("4_vwxnn")]
+position = Vector2(6594, 786.00006)
+scale = Vector2(1.5, 1.5)
+
+[node name="platform22" parent="." unique_id=252034832 instance=ExtResource("4_vwxnn")]
+position = Vector2(6970, 684)
+scale = Vector2(1.5, 1.5)
+
+[node name="platform24" parent="." unique_id=890373774 instance=ExtResource("4_vwxnn")]
+position = Vector2(7280.0005, 513)
+scale = Vector2(1.5, 1.5)
+
+[node name="platform25" parent="." unique_id=583797845 instance=ExtResource("4_vwxnn")]
+position = Vector2(7602.0005, 631)
+scale = Vector2(1.5, 1.5)
+
+[node name="platform23" parent="." unique_id=756409305 instance=ExtResource("4_vwxnn")]
+position = Vector2(8194, 818.00006)
+scale = Vector2(1.5, 1.5)
+
+[node name="platform20" parent="." unique_id=1076528038 instance=ExtResource("4_vwxnn")]
+position = Vector2(6278, 857)
+scale = Vector2(1.5, 1.5)
+
 [node name="Area2D" type="Area2D" parent="." unique_id=1185606501]
 position = Vector2(1216, 1855)
 
@@ -110,7 +181,7 @@ scale = Vector2(40, 40)
 shape = SubResource("WorldBoundaryShape2D_pxqgl")
 
 [node name="MILK" type="StaticBody2D" parent="." unique_id=1791088790]
-position = Vector2(2395, 393)
+position = Vector2(8336, 694)
 
 [node name="Sprite2D" type="Sprite2D" parent="MILK" unique_id=463533140]
 position = Vector2(0, 18.999987)

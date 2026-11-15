@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = 1500
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept"): #and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
