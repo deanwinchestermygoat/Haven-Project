@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dvv8p5j0pt0li" path="res://tileset 1.png" id="2_ttxor"]
 [ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://platform.tscn" id="4_vwxnn"]
 [ext_resource type="PackedScene" uid="uid://bol3w726twbrp" path="res://main_player.tscn" id="5_5oq2v"]
+[ext_resource type="AudioStream" uid="uid://dcyvqaav0ottv" path="res://milk2.mp3" id="6_41agh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwgne"]
 size = Vector2(96, 88)
@@ -126,6 +127,10 @@ scale = Vector2(0.99999994, 0.5079364)
 shape = SubResource("RectangleShape2D_rojf5")
 
 [node name="Main_player" parent="." unique_id=1284068795 instance=ExtResource("5_5oq2v")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1713405700]
+stream = ExtResource("6_41agh")
+autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="Main_player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="MILK/MILK" to="Main_player" method="_on_milk_body_entered"]

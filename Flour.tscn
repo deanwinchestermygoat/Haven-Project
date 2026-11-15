@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://platform.tscn" id="3_uswaw"]
 [ext_resource type="Texture2D" uid="uid://dbu8rkjf88w6w" path="res://chocolate caku.png" id="4_nukuf"]
 [ext_resource type="PackedScene" uid="uid://jqe4sfelphyo" path="res://main_player#4.tscn" id="5_r750t"]
+[ext_resource type="AudioStream" uid="uid://bmiyfjvdvm0f1" path="res://Flour2.mp3" id="6_lxce1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwgne"]
 size = Vector2(96, 88)
@@ -132,6 +133,10 @@ position = Vector2(161, 15)
 shape = SubResource("RectangleShape2D_pxqgl")
 
 [node name="Main_player#4" parent="." unique_id=1284068795 instance=ExtResource("5_r750t")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=468259520]
+stream = ExtResource("6_lxce1")
+autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="Main_player#4" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Flour/Flour" to="Main_player#4" method="_on_flour_body_entered"]

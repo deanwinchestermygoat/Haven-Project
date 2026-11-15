@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://platform.tscn" id="2_nc3bw"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="3_ymyyw"]
 [ext_resource type="PackedScene" uid="uid://dy70qckrdvkcf" path="res://main_player#5.tscn" id="4_rbccg"]
+[ext_resource type="AudioStream" uid="uid://bnp6mcoyuserj" path="res://evil and intimidating horse new ver.mp3" id="5_nc3bw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxqgl"]
 size = Vector2(126, 129)
@@ -17,6 +18,13 @@ distance = 102.0
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=154945434]
 position = Vector2(1337.9998, 724.25)
+scale = Vector2(3.033333, 1.7930554)
+texture = ExtResource("1_gi5kr")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=1586042657]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D6" unique_id=436832456]
+position = Vector2(7890, 724)
 scale = Vector2(3.033333, 1.7930554)
 texture = ExtResource("1_gi5kr")
 
@@ -36,14 +44,14 @@ scale = Vector2(3.033333, 1.7930554)
 texture = ExtResource("1_gi5kr")
 
 [node name="platform" parent="." unique_id=1930638987 instance=ExtResource("2_nc3bw")]
-position = Vector2(1519, 333)
+position = Vector2(1571, 433)
 
 [node name="platform7" parent="." unique_id=553161333 instance=ExtResource("2_nc3bw")]
 position = Vector2(2822, 489)
 rotation = 1.5707964
 
 [node name="platform6" parent="." unique_id=1854766034 instance=ExtResource("2_nc3bw")]
-position = Vector2(2277, 417)
+position = Vector2(2308, 520)
 rotation = 1.5707964
 
 [node name="platform2" parent="." unique_id=1848909965 instance=ExtResource("2_nc3bw")]
@@ -61,30 +69,48 @@ rotation = 1.5707964
 position = Vector2(314, 399)
 
 [node name="platform4" parent="." unique_id=653805776 instance=ExtResource("2_nc3bw")]
-position = Vector2(833, 257)
+position = Vector2(826, 469)
 rotation = 1.5707964
 
 [node name="platform9" parent="." unique_id=842170737 instance=ExtResource("2_nc3bw")]
 position = Vector2(3885, 461)
 
 [node name="platform11" parent="." unique_id=1494842948 instance=ExtResource("2_nc3bw")]
-position = Vector2(4436, 431)
+position = Vector2(7322, 655)
 rotation = 1.5707964
 
 [node name="platform12" parent="." unique_id=698329362 instance=ExtResource("2_nc3bw")]
-position = Vector2(4499, 431)
+position = Vector2(7385, 655)
 rotation = 1.5707964
 
 [node name="platform13" parent="." unique_id=327875886 instance=ExtResource("2_nc3bw")]
-position = Vector2(4562, 431)
+position = Vector2(7448, 655)
+rotation = 1.5707964
+
+[node name="platform14" parent="." unique_id=1783378406 instance=ExtResource("2_nc3bw")]
+position = Vector2(4543, 567)
+rotation = 1.5707964
+
+[node name="platform15" parent="." unique_id=784106697 instance=ExtResource("2_nc3bw")]
+position = Vector2(5035, 582)
+rotation = 1.5707964
+
+[node name="platform16" parent="." unique_id=930446852 instance=ExtResource("2_nc3bw")]
+position = Vector2(5382, 645)
+
+[node name="platform17" parent="." unique_id=319512735 instance=ExtResource("2_nc3bw")]
+position = Vector2(5844, 736)
+
+[node name="platform18" parent="." unique_id=982611978 instance=ExtResource("2_nc3bw")]
+position = Vector2(6427, 639)
 rotation = 1.5707964
 
 [node name="platform5" parent="." unique_id=1945825226 instance=ExtResource("2_nc3bw")]
-position = Vector2(1204, 202)
+position = Vector2(1206, 428)
 rotation = 1.5707964
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=890218929]
-position = Vector2(4459, 375)
+position = Vector2(7345, 599)
 texture = ExtResource("3_ymyyw")
 
 [node name="5thcorn" type="Area2D" parent="Sprite2D" unique_id=1198353929]
@@ -104,6 +130,10 @@ shape = SubResource("WorldBoundaryShape2D_shxjj")
 
 [node name="Main_player#5" parent="." unique_id=1284068795 instance=ExtResource("4_rbccg")]
 position = Vector2(62, 62)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Main_player#5" unique_id=2084713295]
+stream = ExtResource("5_nc3bw")
+autoplay = true
 
 [connection signal="body_entered" from="Sprite2D/5thcorn" to="Main_player#5" method="_on_thcorn_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Main_player#5" method="_on_area_2d_body_entered"]
