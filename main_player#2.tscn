@@ -1,22 +1,23 @@
 [gd_scene format=3 uid="uid://loq2f272wwfd"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_wqw5x"]
 [ext_resource type="Script" uid="uid://qwn15qfsfbpa" path="res://main_player#2.gd" id="1_ylmck"]
+[ext_resource type="Texture2D" uid="uid://ckmsjbqvt8pur" path="res://andrew cube.png" id="2_ylmck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twxfn"]
-size = Vector2(43, 127)
+size = Vector2(55, 54)
 
 [node name="Main_player#2" type="CharacterBody2D" unique_id=1284068795]
 position = Vector2(158, 81)
 script = ExtResource("1_ylmck")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=588269617]
-position = Vector2(-42.500004, 0)
-scale = Vector2(0.33593744, 1)
-texture = ExtResource("1_wqw5x")
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1422499366]
+position = Vector2(-2, -6)
+rotation = -0.16580628
+scale = Vector2(0.16071239, 0.1541584)
+texture = ExtResource("2_ylmck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=283262152]
-position = Vector2(-42.5, 0.5)
+position = Vector2(-36.5, -1)
 shape = SubResource("RectangleShape2D_twxfn")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1672187228]

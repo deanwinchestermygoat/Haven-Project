@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cht5uqtmkiak0"]
+
+[ext_resource type="Script" uid="uid://bsk4fl6fpdjor" path="res://qte_n_2.gd" id="1_fqyvr"]
+[ext_resource type="Texture2D" uid="uid://bvyltj5rona5f" path="res://kitchen bg.png" id="2_64vro"]
+[ext_resource type="Texture2D" uid="uid://oqkjrvwq15rj" path="res://skillcheck5.png" id="3_16rmp"]
+[ext_resource type="Texture2D" uid="uid://bvxknp4vqa0iy" path="res://whisk.png" id="4_q3g2o"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="5_4pwn6"]
+[ext_resource type="AudioStream" uid="uid://bu4lepa0bqj1b" path="res://Eggsnew.mp3" id="6_fqyvr"]
+
+[node name="QTE n2" type="Node2D" unique_id=1548456441]
+script = ExtResource("1_fqyvr")
+
+[node name="QTE bar" type="Node" parent="." unique_id=428109476]
+
+[node name="TextureRect" type="TextureRect" parent="QTE bar" unique_id=405014119]
+offset_left = -4.0
+offset_top = -152.0
+offset_right = 1177.0
+offset_bottom = 909.0
+texture = ExtResource("2_64vro")
+expand_mode = 2
+
+[node name="background" type="Sprite2D" parent="QTE bar" unique_id=2110196344]
+position = Vector2(687, 984)
+texture = ExtResource("3_16rmp")
+
+[node name="pointer" type="Sprite2D" parent="QTE bar" unique_id=431120598]
+position = Vector2(613.8146, 252.5469)
+scale = Vector2(0.4138092, 0.5967158)
+texture = ExtResource("4_q3g2o")
+
+[node name="start" type="Marker2D" parent="QTE bar" unique_id=1109363709]
+position = Vector2(205, 524)
+
+[node name="end" type="Marker2D" parent="QTE bar" unique_id=1679847407]
+position = Vector2(952, 518)
+
+[node name="safestartpos" type="Marker2D" parent="QTE bar" unique_id=1734858350]
+position = Vector2(455, 525)
+
+[node name="safeendpos" type="Marker2D" parent="QTE bar" unique_id=1000599338]
+position = Vector2(705, 524)
+
+[node name="scorecounter" type="RichTextLabel" parent="QTE bar" unique_id=1496677979]
+custom_minimum_size = Vector2(1.015, 0)
+anchors_preset = -1
+anchor_left = 0.023000002
+anchor_top = 0.093
+anchor_right = 0.023000002
+anchor_bottom = 0.093
+offset_left = 259.504
+offset_top = 26.736
+offset_right = 621.504
+offset_bottom = 137.736
+theme_override_font_sizes/normal_font_size = 60
+text = "Score: 0"
+
+[node name="livescounter" type="RichTextLabel" parent="QTE bar" unique_id=1059731573]
+offset_left = 728.0
+offset_top = 87.0
+offset_right = 1450.0
+offset_bottom = 545.0
+theme_override_font_sizes/normal_font_size = 60
+
+[node name="milk" type="TextureRect" parent="QTE bar" unique_id=62465292]
+offset_left = 471.0
+offset_top = 238.0
+offset_right = 599.0
+offset_bottom = 366.0
+texture = ExtResource("5_4pwn6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="QTE bar" unique_id=2145291837]
+stream = ExtResource("6_fqyvr")
+autoplay = true
