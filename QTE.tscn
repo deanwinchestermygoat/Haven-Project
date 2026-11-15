@@ -2,12 +2,22 @@
 
 [ext_resource type="Texture2D" uid="uid://oqkjrvwq15rj" path="res://skillcheck5.png" id="1_ebe7b"]
 [ext_resource type="Script" uid="uid://d3880l1mi8y1t" path="res://qtebar.gd" id="1_gfoop"]
+[ext_resource type="Texture2D" uid="uid://bvyltj5rona5f" path="res://kitchen bg.png" id="2_81wtu"]
 [ext_resource type="Texture2D" uid="uid://bvxknp4vqa0iy" path="res://whisk.png" id="3_gfoop"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="5_4uh6t"]
 
 [node name="QTE" type="Node2D" unique_id=1548456441]
 script = ExtResource("1_gfoop")
 
 [node name="QTE bar" type="Node" parent="." unique_id=428109476]
+
+[node name="TextureRect" type="TextureRect" parent="QTE bar" unique_id=405014119]
+offset_left = -4.0
+offset_top = -152.0
+offset_right = 1177.0
+offset_bottom = 909.0
+texture = ExtResource("2_81wtu")
+expand_mode = 2
 
 [node name="background" type="Sprite2D" parent="QTE bar" unique_id=2110196344]
 position = Vector2(687, 984)
@@ -32,9 +42,28 @@ position = Vector2(705, 524)
 
 [node name="scorecounter" type="RichTextLabel" parent="QTE bar" unique_id=1496677979]
 custom_minimum_size = Vector2(1.015, 0)
-offset_left = 418.0
-offset_top = 52.0
-offset_right = 780.0
-offset_bottom = 163.0
+anchors_preset = -1
+anchor_left = 0.023000002
+anchor_top = 0.093
+anchor_right = 0.023000002
+anchor_bottom = 0.093
+offset_left = 129.504
+offset_top = 26.736
+offset_right = 491.504
+offset_bottom = 137.736
 theme_override_font_sizes/normal_font_size = 60
 text = "Score: 0"
+
+[node name="livescounter" type="RichTextLabel" parent="QTE bar" unique_id=1059731573]
+offset_left = 578.0
+offset_top = 87.0
+offset_right = 1300.0
+offset_bottom = 545.0
+theme_override_font_sizes/normal_font_size = 60
+
+[node name="milk" type="TextureRect" parent="QTE bar" unique_id=62465292]
+offset_left = 471.0
+offset_top = 238.0
+offset_right = 599.0
+offset_bottom = 366.0
+texture = ExtResource("5_4uh6t")
