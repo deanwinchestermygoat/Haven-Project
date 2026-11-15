@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dbu8rkjf88w6w" path="res://chocolate caku.png" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="5_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://bvyltj5rona5f" path="res://kitchen bg.png" id="6_g12sc"]
+[ext_resource type="Texture2D" uid="uid://d3d6g5upggiv3" path="res://chef.png" id="7_ryofh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g12sc"]
 atlas = ExtResource("2_epypp")
@@ -37,7 +38,7 @@ var text_content1: Array = [
 	]
 var after_lines: Array = [
 	\"Andrew: I think we might be out of milk.\",
-	\"[enter_chef]\",
+	\"*enters*\",
 	\"Chef: *wipes the corners of his mouth* We're out of milk now.\",
 	\"Andrew: Did you just finish the carton..?\",
 	\"next_scene \"
@@ -96,7 +97,7 @@ func _process(delta: float) -> void:
 				andrew_image.hide()
 				chef_image.show()
 			elif speaker_name == \"next_scene\":
-				get_tree().change_scene_to_file(\"res://scenes/QTE.tscn\")
+				get_tree().change_scene_to_file(\"res://QTE.tscn\")
 	
 		
 	
@@ -173,8 +174,9 @@ offset_bottom = 361.0
 texture = ExtResource("5_q6r6c")
 
 [node name="TextureRect3" type="TextureRect" parent="Text Interactions" unique_id=58447825]
-offset_left = 855.0
-offset_top = 213.0
-offset_right = 1011.0
-offset_bottom = 367.0
-texture = ExtResource("5_q6r6c")
+offset_left = 700.0
+offset_top = -16.0
+offset_right = 1254.0
+offset_bottom = 632.0
+texture = ExtResource("7_ryofh")
+expand_mode = 1
