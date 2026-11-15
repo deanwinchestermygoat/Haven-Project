@@ -37,9 +37,11 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-
 func _on_flour_body_entered(body: Node2D) -> void:
-	print("newflour")
+	if NewScript.evil_cake ==true:
+			get_tree().change_scene_to_file("res://evil_cornstarch.tscn")
+	else:
+			get_tree().change_scene_to_file("Ending1")
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
