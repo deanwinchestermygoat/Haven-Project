@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b3evlwp8fpew7"]
+
+[ext_resource type="Texture2D" uid="uid://ci17e64upc6hp" path="res://title page.png" id="1_oyqm6"]
+[ext_resource type="Script" uid="uid://01dq2dxl021d" path="res://button.gd" id="2_kpexm"]
+
+[node name="Title" type="Node2D" unique_id=474610242]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=610098303]
+position = Vector2(572.5, 323.50003)
+scale = Vector2(0.32639682, 0.26088715)
+texture = ExtResource("1_oyqm6")
+
+[node name="Button" type="Button" parent="." unique_id=928851659]
+offset_left = 339.0
+offset_top = 215.0
+offset_right = 449.0
+offset_bottom = 302.0
+text = "Click to play!!"
+script = ExtResource("2_kpexm")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
