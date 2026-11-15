@@ -1,23 +1,25 @@
 [gd_scene format=3 uid="uid://jqe4sfelphyo"]
 
 [ext_resource type="Script" uid="uid://d05ya26vglxfc" path="res://main_player#4.gd" id="1_wrobe"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_2jgeh"]
+[ext_resource type="Texture2D" uid="uid://ckmsjbqvt8pur" path="res://andrew cube.png" id="2_wrobe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twxfn"]
-size = Vector2(43, 127)
+size = Vector2(54, 52)
 
 [node name="Main_player#4" type="CharacterBody2D" unique_id=1284068795]
 position = Vector2(158, 81)
 script = ExtResource("1_wrobe")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=588269617]
-position = Vector2(-42.500004, 0)
-scale = Vector2(0.33593744, 1)
-texture = ExtResource("2_2jgeh")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=283262152]
-position = Vector2(-42.5, 0.5)
+position = Vector2(0, -6)
+scale = Vector2(0.9999998, 0.99999994)
 shape = SubResource("RectangleShape2D_twxfn")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1672187228]
 position = Vector2(-38, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1756758323]
+position = Vector2(34.99997, -10.9999695)
+rotation = -0.16580628
+scale = Vector2(0.16071239, 0.1541584)
+texture = ExtResource("2_wrobe")

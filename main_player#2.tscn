@@ -4,21 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://ckmsjbqvt8pur" path="res://andrew cube.png" id="2_ylmck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twxfn"]
-size = Vector2(55, 54)
+size = Vector2(65, 47)
 
 [node name="Main_player#2" type="CharacterBody2D" unique_id=1284068795]
 position = Vector2(158, 81)
 script = ExtResource("1_ylmck")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1422499366]
-position = Vector2(-2, -6)
-rotation = -0.16580628
-scale = Vector2(0.16071239, 0.1541584)
-texture = ExtResource("2_ylmck")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=283262152]
-position = Vector2(-36.5, -1)
+position = Vector2(-25.5, -8.5)
 shape = SubResource("RectangleShape2D_twxfn")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1672187228]
 position = Vector2(-38, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=499057562]
+position = Vector2(15, -13.0000305)
+rotation = -0.16580628
+scale = Vector2(0.19589595, 0.1541584)
+texture = ExtResource("2_ylmck")

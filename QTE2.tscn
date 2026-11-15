@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bvyltj5rona5f" path="res://kitchen bg.png" id="2_gn1cm"]
 [ext_resource type="Texture2D" uid="uid://oqkjrvwq15rj" path="res://skillcheck5.png" id="2_yxlc3"]
 [ext_resource type="Texture2D" uid="uid://bvxknp4vqa0iy" path="res://whisk.png" id="3_07p3t"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="5_jkjoq"]
+[ext_resource type="Texture2D" uid="uid://c2sl07t6d5v0a" path="res://egg.png" id="4_07p3t"]
 [ext_resource type="AudioStream" uid="uid://dcyvqaav0ottv" path="res://milk2.mp3" id="6_e01hn"]
 
 [sub_resource type="GDScript" id="GDScript_ryofh"]
@@ -102,11 +102,12 @@ theme_override_font_sizes/normal_font_size = 60
 text = "3"
 
 [node name="milk" type="TextureRect" parent="QTE bar" unique_id=62465292]
-offset_left = 471.0
-offset_top = 238.0
-offset_right = 599.0
-offset_bottom = 366.0
-texture = ExtResource("5_jkjoq")
+offset_left = 281.0
+offset_top = -94.0
+offset_right = 924.0
+offset_bottom = 657.0
+texture = ExtResource("4_07p3t")
+expand_mode = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="QTE bar" unique_id=2145291837]
 stream = ExtResource("6_e01hn")

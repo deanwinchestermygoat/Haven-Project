@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cy2nfjwv3i4e0"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_dbkug"]
+[ext_resource type="Texture2D" uid="uid://ckmsjbqvt8pur" path="res://andrew cube.png" id="1_dbkug"]
 
 [sub_resource type="GDScript" id="GDScript_7qbax"]
 script/source = "extends CharacterBody2D
@@ -54,20 +54,21 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twxfn"]
-size = Vector2(43, 127)
+size = Vector2(53.5, 55.5)
 
 [node name="Main_player#3" type="CharacterBody2D" unique_id=1284068795]
 position = Vector2(158, 81)
 script = SubResource("GDScript_7qbax")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=588269617]
-position = Vector2(-42.500004, 0)
-scale = Vector2(0.33593744, 1)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1672187228]
+position = Vector2(-38, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=595839101]
+position = Vector2(15.000001, -3.9999962)
+rotation = -0.16580628
+scale = Vector2(0.16071239, 0.1541584)
 texture = ExtResource("1_dbkug")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=283262152]
-position = Vector2(-42.5, 0.5)
+position = Vector2(-19.75, 0.25)
 shape = SubResource("RectangleShape2D_twxfn")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1672187228]
-position = Vector2(-38, 1)
