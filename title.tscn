@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ci17e64upc6hp" path="res://title page.png" id="1_oyqm6"]
 [ext_resource type="Script" uid="uid://01dq2dxl021d" path="res://button.gd" id="2_kpexm"]
+[ext_resource type="AudioStream" uid="uid://dc1rr2xl3plyd" path="res://Awesome lesbian couple (lobby)(1).mp3" id="3_kpexm"]
 
 [node name="Title" type="Node2D" unique_id=474610242]
 
@@ -17,5 +18,9 @@ offset_right = 449.0
 offset_bottom = 302.0
 text = "Click to play!!"
 script = ExtResource("2_kpexm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=220235658]
+stream = ExtResource("3_kpexm")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

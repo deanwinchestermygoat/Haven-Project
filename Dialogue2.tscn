@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ddydn6u84r4e4" path="res://strawberry caku.png" id="4_ys4ex"]
 [ext_resource type="Texture2D" uid="uid://doqj86pmoucr8" path="res://andrew .png" id="7_3k16q"]
 [ext_resource type="Texture2D" uid="uid://d3d6g5upggiv3" path="res://chef.png" id="7_ys4ex"]
+[ext_resource type="AudioStream" uid="uid://bu4lepa0bqj1b" path="res://Eggsnew.mp3" id="8_ys4ex"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g12sc"]
 atlas = ExtResource("2_m8ffq")
@@ -145,3 +146,7 @@ offset_right = 1254.0
 offset_bottom = 632.0
 texture = ExtResource("7_ys4ex")
 expand_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=738537401]
+stream = ExtResource("8_ys4ex")
+autoplay = true

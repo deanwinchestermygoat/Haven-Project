@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bvyltj5rona5f" path="res://kitchen bg.png" id="6_g12sc"]
 [ext_resource type="Texture2D" uid="uid://doqj86pmoucr8" path="res://andrew .png" id="6_ryofh"]
 [ext_resource type="Texture2D" uid="uid://d3d6g5upggiv3" path="res://chef.png" id="7_ryofh"]
+[ext_resource type="AudioStream" uid="uid://dcyvqaav0ottv" path="res://milk2.mp3" id="8_ld8m1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g12sc"]
 atlas = ExtResource("2_epypp")
@@ -101,7 +102,7 @@ func _process(delta: float) -> void:
 atlas = ExtResource("2_0e48y")
 region = Rect2(214.54053, 813.4956, 1235.8428, 451.41577)
 
-[node name="Text Aspect" type="Node2D" unique_id=799201127]
+[node name="Text Aspect2" type="Node2D" unique_id=799201127]
 
 [node name="Text Interactions" type="Node" parent="." unique_id=1288048653]
 
@@ -175,3 +176,7 @@ offset_right = 1254.0
 offset_bottom = 632.0
 texture = ExtResource("7_ryofh")
 expand_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=434584858]
+stream = ExtResource("8_ld8m1")
+autoplay = true
