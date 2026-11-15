@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://btep1ud3nf68o"]
+
+[ext_resource type="Texture2D" uid="uid://2iu2gjtyvupc" path="res://evil ending.png" id="1_dbpea"]
+
+[node name="Node2D" type="Node2D" unique_id=1508782121]
+
+[node name="EvilEnding" type="Sprite2D" parent="." unique_id=468135370]
+position = Vector2(576.25, 324.00003)
+scale = Vector2(0.3253991, 0.2580645)
+texture = ExtResource("1_dbpea")

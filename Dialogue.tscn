@@ -4,16 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://ddydn6u84r4e4" path="res://strawberry caku.png" id="2_0e48y"]
 [ext_resource type="FontFile" uid="uid://c8xlyi24xpfu4" path="res://SugarFlareDemoRegular-4nGED.otf" id="2_0hol4"]
 [ext_resource type="Texture2D" uid="uid://dbu8rkjf88w6w" path="res://chocolate caku.png" id="2_epypp"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="5_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://bvyltj5rona5f" path="res://kitchen bg.png" id="6_g12sc"]
+[ext_resource type="Texture2D" uid="uid://doqj86pmoucr8" path="res://andrew .png" id="6_ryofh"]
 [ext_resource type="Texture2D" uid="uid://d3d6g5upggiv3" path="res://chef.png" id="7_ryofh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g12sc"]
 atlas = ExtResource("2_epypp")
 region = Rect2(181.70984, 1277.9891, 1235.695, 459.65466)
 
-[sub_resource type="GDScript" id="GDScript_5h13y"]
-resource_name = "First"
+[sub_resource type="GDScript" id="GDScript_bprgn"]
 script/source = "extends RichTextLabel
 var text_number = -1
 var click_state = false
@@ -38,10 +37,9 @@ var text_content1: Array = [
 	]
 var after_lines: Array = [
 	\"Andrew: I think we might be out of milk.\",
-	\"*enters*\",
+	\"[enter_chef]\",
 	\"Chef: *wipes the corners of his mouth* We're out of milk now.\",
-	\"Andrew: Did you just finish the carton..?\",
-	\"next_scene \"
+	\"Andrew: Did you just finish the carton..?\", \"next_scene\"
 ]
 var speaker_name = \"Andrew:\"
 # Called when the node enters the scene tree for the first time.
@@ -63,7 +61,6 @@ func _on_choice(yes: bool) -> void:
 	text_content1.append_array(after_lines)
 	text_number = -1
 	click_state = true
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -98,9 +95,6 @@ func _process(delta: float) -> void:
 				chef_image.show()
 			elif speaker_name == \"next_scene\":
 				get_tree().change_scene_to_file(\"res://QTE.tscn\")
-	
-		
-	
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ryofh"]
@@ -152,7 +146,7 @@ offset_bottom = 37.079987
 theme_override_colors/default_color = Color(0.8235294, 0.43137255, 0.52156866, 1)
 theme_override_fonts/normal_font = ExtResource("2_0hol4")
 theme_override_font_sizes/normal_font_size = 30
-script = SubResource("GDScript_5h13y")
+script = SubResource("GDScript_bprgn")
 
 [node name="Button2" type="Button" parent="Text Interactions" unique_id=848184376]
 offset_left = 107.0
@@ -167,11 +161,12 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="TextureRect2" type="TextureRect" parent="Text Interactions" unique_id=414696465]
-offset_left = 100.0
-offset_top = 220.0
-offset_right = 228.0
-offset_bottom = 361.0
-texture = ExtResource("5_q6r6c")
+offset_left = -110.0
+offset_top = -9.0
+offset_right = 384.0
+offset_bottom = 644.0
+texture = ExtResource("6_ryofh")
+expand_mode = 1
 
 [node name="TextureRect3" type="TextureRect" parent="Text Interactions" unique_id=58447825]
 offset_left = 700.0
