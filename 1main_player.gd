@@ -43,5 +43,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_milk_body_entered(body: Node2D) -> void:
-	print("newmilk")
+	get_tree().change_scene_to_file("res://Dialogue2.tscn")
 	pass #MILK INTERACTION
