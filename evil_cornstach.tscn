@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://b74ul8x51ncon"]
+
+[ext_resource type="Texture2D" uid="uid://b407b4tl0ovjb" path="res://tileset2.png" id="1_gi5kr"]
+[ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://platform.tscn" id="2_nc3bw"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="3_ymyyw"]
+[ext_resource type="PackedScene" uid="uid://dy70qckrdvkcf" path="res://main_player#5.tscn" id="4_rbccg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxqgl"]
+size = Vector2(126, 129)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_shxjj"]
+distance = 102.0
+
+[node name="Evil cornstach" type="Node2D" unique_id=1017670947]
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1163717104]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=154945434]
+position = Vector2(1337.9998, 724.25)
+scale = Vector2(3.033333, 1.7930554)
+texture = ExtResource("1_gi5kr")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=2133983025]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4" unique_id=545956278]
+position = Vector2(-1938.0001, 722)
+scale = Vector2(3.033333, 1.7930554)
+texture = ExtResource("1_gi5kr")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=1165695800]
+position = Vector2(6516, 54)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D5" unique_id=1117398681]
+position = Vector2(-1902.0001, 670)
+scale = Vector2(3.033333, 1.7930554)
+texture = ExtResource("1_gi5kr")
+
+[node name="platform" parent="." unique_id=1930638987 instance=ExtResource("2_nc3bw")]
+position = Vector2(1519, 333)
+
+[node name="platform7" parent="." unique_id=553161333 instance=ExtResource("2_nc3bw")]
+position = Vector2(2822, 489)
+rotation = 1.5707964
+
+[node name="platform6" parent="." unique_id=1854766034 instance=ExtResource("2_nc3bw")]
+position = Vector2(2277, 417)
+rotation = 1.5707964
+
+[node name="platform2" parent="." unique_id=1848909965 instance=ExtResource("2_nc3bw")]
+position = Vector2(-86, 349)
+
+[node name="platform10" parent="." unique_id=1625295923 instance=ExtResource("2_nc3bw")]
+position = Vector2(3267, 486)
+rotation = 1.5707964
+
+[node name="platform8" parent="." unique_id=566283459 instance=ExtResource("2_nc3bw")]
+position = Vector2(3635, 499)
+rotation = 1.5707964
+
+[node name="platform3" parent="." unique_id=101093476 instance=ExtResource("2_nc3bw")]
+position = Vector2(314, 399)
+
+[node name="platform4" parent="." unique_id=653805776 instance=ExtResource("2_nc3bw")]
+position = Vector2(833, 257)
+rotation = 1.5707964
+
+[node name="platform9" parent="." unique_id=842170737 instance=ExtResource("2_nc3bw")]
+position = Vector2(3885, 461)
+
+[node name="platform11" parent="." unique_id=1494842948 instance=ExtResource("2_nc3bw")]
+position = Vector2(4436, 431)
+rotation = 1.5707964
+
+[node name="platform12" parent="." unique_id=698329362 instance=ExtResource("2_nc3bw")]
+position = Vector2(4499, 431)
+rotation = 1.5707964
+
+[node name="platform13" parent="." unique_id=327875886 instance=ExtResource("2_nc3bw")]
+position = Vector2(4562, 431)
+rotation = 1.5707964
+
+[node name="platform5" parent="." unique_id=1945825226 instance=ExtResource("2_nc3bw")]
+position = Vector2(1204, 202)
+rotation = 1.5707964
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=890218929]
+position = Vector2(4459, 375)
+texture = ExtResource("3_ymyyw")
+
+[node name="5thcorn" type="Area2D" parent="Sprite2D" unique_id=1198353929]
+position = Vector2(204, 45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/5thcorn" unique_id=752585845]
+position = Vector2(-203, -44)
+shape = SubResource("RectangleShape2D_pxqgl")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2086472067]
+position = Vector2(1216, 1855)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=186851362]
+position = Vector2(203.99998, 3952.9998)
+scale = Vector2(40, 40)
+shape = SubResource("WorldBoundaryShape2D_shxjj")
+
+[node name="Main_player#5" parent="." unique_id=1284068795 instance=ExtResource("4_rbccg")]
+position = Vector2(62, 62)
+
+[connection signal="body_entered" from="Sprite2D/5thcorn" to="Main_player#5" method="_on_thcorn_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Main_player#5" method="_on_area_2d_body_entered"]
