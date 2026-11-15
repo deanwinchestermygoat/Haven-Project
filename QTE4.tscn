@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 			lives -=1
 	if lives <=0:
 		reset_game()
-	if score >=15:
+	if score >=20:
 		get_tree().change_scene_to_file(\"res://Flour.tscn\")
 		#go to next stage
 	score_counter.text = (\"%d\"%[score])

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cddsffx7imows"]
 
 [ext_resource type="Texture2D" uid="uid://pvpfn3a7j3rs" path="res://true ending.png" id="1_pnpxu"]
+[ext_resource type="AudioStream" uid="uid://bmiyfjvdvm0f1" path="res://Flour2.mp3" id="2_hx8kp"]
 
 [node name="Node2D" type="Node2D" unique_id=1762078888]
 
@@ -8,3 +9,7 @@
 position = Vector2(570.75, 319.49994)
 scale = Vector2(0.31599203, 0.24395162)
 texture = ExtResource("1_pnpxu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1932088234]
+stream = ExtResource("2_hx8kp")
+autoplay = true

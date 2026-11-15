@@ -23,24 +23,26 @@ var waiting_for_choice = false
 @onready var button_2: Button = $\"../Button2\"
 @onready var andrew_image: TextureRect = $\"../TextureRect2\"
 @onready var chef_image: TextureRect = $\"../TextureRect3\"
+
 var text_content1: Array = [
-	\"Wow. That was.. a journey.\",
-	\"At least CHEF isn’t hiding the ingredients anymore.\",
-	\"The mixing bowl’s looking a bit fuller\",
-	\"Uhh…\",
-	\"Flour goes in cake right?\",
-	\"next_scene\",]
+\"Wow. That was.. a journey.\",
+\"The mixing bowl’s looking a bit fuller.\",
+\"Uhh…\",
+\"Flour goes in cake right?\",
+\"next_scene\"]
 var speaker_name = \"Andrew:\"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	button.hide()
 	button_2.hide()
-	andrew_image.show()
+	andrew_image.hide()
 	chef_image.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	andrew_image.show()
+	chef_image.show()
 	if Input.is_action_just_pressed(\"leftclick\") and not waiting_for_choice:
 		click_state = not click_state
 	if click_state == true:
@@ -63,6 +65,8 @@ func _process(delta: float) -> void:
 				chef_image.show()
 			elif speaker_name == \"next_scene\":
 				get_tree().change_scene_to_file(\"res://QTE4.tscn\")
+	
+		
 	
 "
 

@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://platform.tscn" id="1_16pka"]
 [ext_resource type="Texture2D" uid="uid://b407b4tl0ovjb" path="res://tileset2.png" id="1_shxjj"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="3_1jdk1"]
 [ext_resource type="PackedScene" uid="uid://cy2nfjwv3i4e0" path="res://main_player#3.tscn" id="3_16pka"]
+[ext_resource type="Texture2D" uid="uid://ds0tuoujrjkh" path="res://bitch.png" id="3_tr4qv"]
 [ext_resource type="AudioStream" uid="uid://blqkbvea4vm37" path="res://Sugar(2).mp3" id="5_tr4qv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxqgl"]
-size = Vector2(126, 129)
+size = Vector2(370.99805, 455.00012)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_shxjj"]
 distance = 102.0
@@ -64,14 +64,16 @@ position = Vector2(4039, 451)
 position = Vector2(1204, 202)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=890218929]
-position = Vector2(4185, 381)
-texture = ExtResource("3_1jdk1")
+position = Vector2(4184, 412)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_tr4qv")
 
 [node name="thrid" type="Area2D" parent="Sprite2D" unique_id=1198353929]
 position = Vector2(204, 45)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/thrid" unique_id=752585845]
-position = Vector2(-201, -41)
+position = Vector2(-323.5, 32.5)
+scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_pxqgl")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2086472067]

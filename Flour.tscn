@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b407b4tl0ovjb" path="res://tileset2.png" id="1_avyg5"]
 [ext_resource type="Texture2D" uid="uid://dvv8p5j0pt0li" path="res://tileset 1.png" id="2_lxce1"]
 [ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://platform.tscn" id="3_uswaw"]
-[ext_resource type="Texture2D" uid="uid://dbu8rkjf88w6w" path="res://chocolate caku.png" id="4_nukuf"]
+[ext_resource type="Texture2D" uid="uid://c455frbemepwe" path="res://flour.png" id="4_lxce1"]
 [ext_resource type="PackedScene" uid="uid://jqe4sfelphyo" path="res://main_player#4.tscn" id="5_r750t"]
 [ext_resource type="AudioStream" uid="uid://bmiyfjvdvm0f1" path="res://Flour2.mp3" id="6_lxce1"]
 
@@ -14,7 +14,7 @@ size = Vector2(96, 88)
 distance = 102.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxqgl"]
-size = Vector2(235.5, 67)
+size = Vector2(235.5, 151)
 
 [node name="Flour" type="Node2D" unique_id=472638141]
 
@@ -121,15 +121,15 @@ shape = SubResource("WorldBoundaryShape2D_pxqgl")
 position = Vector2(3133, 313)
 
 [node name="Sprite2D" type="Sprite2D" parent="Flour" unique_id=941677151]
-position = Vector2(240.99997, -24)
+position = Vector2(230.99997, 35)
 scale = Vector2(0.19074075, 0.14537036)
-texture = ExtResource("4_nukuf")
+texture = ExtResource("4_lxce1")
 
 [node name="Flour" type="Area2D" parent="Flour" unique_id=2116461578]
 position = Vector2(79, 24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flour/Flour" unique_id=838701619]
-position = Vector2(161, 15)
+position = Vector2(161, -1.5)
 shape = SubResource("RectangleShape2D_pxqgl")
 
 [node name="Main_player#4" parent="." unique_id=1284068795 instance=ExtResource("5_r750t")]

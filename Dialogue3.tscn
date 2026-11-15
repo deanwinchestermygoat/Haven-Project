@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dbu8rkjf88w6w" path="res://chocolate caku.png" id="2_wgjs5"]
 [ext_resource type="FontFile" uid="uid://c8xlyi24xpfu4" path="res://SugarFlareDemoRegular-4nGED.otf" id="3_3mc1j"]
 [ext_resource type="Texture2D" uid="uid://ddydn6u84r4e4" path="res://strawberry caku.png" id="4_k362u"]
+[ext_resource type="Script" uid="uid://csnc6b56w122h" path="res://Dialogue3.gd" id="5_k362u"]
 [ext_resource type="Texture2D" uid="uid://doqj86pmoucr8" path="res://andrew .png" id="6_k362u"]
 [ext_resource type="Texture2D" uid="uid://d3d6g5upggiv3" path="res://chef.png" id="7_k362u"]
 
@@ -12,73 +13,11 @@
 atlas = ExtResource("2_wgjs5")
 region = Rect2(181.70984, 1277.9891, 1235.695, 459.65466)
 
-[sub_resource type="GDScript" id="GDScript_xwgne"]
-script/source = "extends RichTextLabel
-var text_number = -1
-var click_state = false
-var waiting_for_choice = false
-@onready var text_box: TextureRect = $\"../Text Box\"
-@onready var rich_text_label: RichTextLabel = $\".\"
-@onready var button: Button = $\"../Button\"
-@onready var button_2: Button = $\"../Button2\"
-@onready var andrew_image: TextureRect = $\"../TextureRect2\"
-@onready var chef_image: TextureRect = $\"../TextureRect3\"
-var text_content1: Array = [
-	\"Andrew: Finally.. I think I'm done..\",
-	\"Andrew: This looks.. cake mix enough.\",
-	\"Andrew: ...\",
-	\"Andrew: How do I put this together?\",
-	\"Andrew: *glances around*\",
-	\"Andrew: I mean.. If you insist.\",
-	\"Andrew: A̶̡̔r̷̛̈ģ̸̑j̸̨̈́g̵̛͂r̶̢̎j̷̡͋k̸̡̄ǵ̸̍ĵ̴̢̈k̸̢̈r̸̛̋\",
-	\"Andrew: A̶̡̔r̷̛̈ģ̸̑j̸̨̈́g̵̛͂r̶̢̎j̷̡͋k̸̡̄ǵ̸̍ĵ̴̢̈k̸̢̈r̸̛̋\",
-	\"Andrew: Oh no.\",
-	\"Andrew: Oh no no no no no.\",
-	\"Andrew: ...\",
-	\"Andrew: It was the cornstarch wasn't it?\",
-	\"next_scene\"
-]
-var speaker_name = \"Andrew:\"
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	button.hide()
-	button_2.hide()
-	andrew_image.show()
-	chef_image.hide()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed(\"leftclick\") and not waiting_for_choice:
-		click_state = not click_state
-	if click_state == true:
-		text_number+=1
-		click_state = not click_state
-		if text_number>=text_content1.size():
-			rich_text_label.hide()
-			text_box.hide()
-			andrew_image.hide()
-			chef_image.hide()
-			text_number = 0
-		else:
-			text = text_content1[text_number]
-			speaker_name = text_content1[text_number].get_slice(\" \", 0)
-			if speaker_name == \"Andrew:\":
-				chef_image.hide()
-				andrew_image.show()
-			elif speaker_name == \"Chef:\":
-				andrew_image.hide()
-				chef_image.show()
-			elif speaker_name == \"next_scene\":
-				get_tree().change_scene_to_file(\"res://Ending2.tscn\")
-	
-"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ryofh"]
 atlas = ExtResource("4_k362u")
 region = Rect2(214.54053, 813.4956, 1235.8428, 451.41577)
 
-[node name="Text Aspect" type="Node2D" unique_id=799201127]
+[node name="Text Aspect2" type="Node2D" unique_id=799201127]
 
 [node name="Text Interactions" type="Node" parent="." unique_id=1288048653]
 
@@ -123,7 +62,7 @@ offset_bottom = 37.079987
 theme_override_colors/default_color = Color(0.8235294, 0.43137255, 0.52156866, 1)
 theme_override_fonts/normal_font = ExtResource("3_3mc1j")
 theme_override_font_sizes/normal_font_size = 30
-script = SubResource("GDScript_xwgne")
+script = ExtResource("5_k362u")
 
 [node name="Button2" type="Button" parent="Text Interactions" unique_id=848184376]
 offset_left = 107.0

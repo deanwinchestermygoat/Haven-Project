@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://t8gsgk204owp"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_gi6lk"]
 [ext_resource type="Texture2D" uid="uid://b407b4tl0ovjb" path="res://tileset2.png" id="1_nl0h0"]
 [ext_resource type="Texture2D" uid="uid://dvv8p5j0pt0li" path="res://tileset 1.png" id="2_ttxor"]
+[ext_resource type="Texture2D" uid="uid://dokkx0rnm37xr" path="res://milk.png" id="4_41agh"]
 [ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://platform.tscn" id="4_vwxnn"]
 [ext_resource type="PackedScene" uid="uid://bol3w726twbrp" path="res://main_player.tscn" id="5_5oq2v"]
 [ext_resource type="AudioStream" uid="uid://dcyvqaav0ottv" path="res://milk2.mp3" id="6_41agh"]
@@ -184,9 +184,9 @@ shape = SubResource("WorldBoundaryShape2D_pxqgl")
 position = Vector2(8336, 694)
 
 [node name="Sprite2D" type="Sprite2D" parent="MILK" unique_id=463533140]
-position = Vector2(0, 18.999987)
-scale = Vector2(1, 1.9687502)
-texture = ExtResource("1_gi6lk")
+position = Vector2(-35.00027, 6.468729)
+scale = Vector2(0.34259304, 0.3639468)
+texture = ExtResource("4_41agh")
 
 [node name="MILK" type="Area2D" parent="MILK" unique_id=864400495]
 position = Vector2(99.00012, 34)

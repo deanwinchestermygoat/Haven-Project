@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b407b4tl0ovjb" path="res://tileset2.png" id="1_d2rgw"]
 [ext_resource type="Texture2D" uid="uid://dvv8p5j0pt0li" path="res://tileset 1.png" id="2_tdw4n"]
 [ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://platform.tscn" id="3_46ecl"]
-[ext_resource type="Texture2D" uid="uid://dbu8rkjf88w6w" path="res://chocolate caku.png" id="5_d2rgw"]
+[ext_resource type="Texture2D" uid="uid://c2sl07t6d5v0a" path="res://egg.png" id="4_6nwul"]
 [ext_resource type="PackedScene" uid="uid://loq2f272wwfd" path="res://main_player#2.tscn" id="5_tdw4n"]
 [ext_resource type="AudioStream" uid="uid://bu4lepa0bqj1b" path="res://Eggsnew.mp3" id="6_6nwul"]
 
@@ -14,7 +14,7 @@ size = Vector2(96, 88)
 distance = 102.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxqgl"]
-size = Vector2(235.5, 67)
+size = Vector2(114, 124)
 
 [node name="Platforming LEVEL TWO" type="Node2D" unique_id=472638141]
 
@@ -121,15 +121,15 @@ shape = SubResource("WorldBoundaryShape2D_pxqgl")
 position = Vector2(3133, 313)
 
 [node name="Sprite2D" type="Sprite2D" parent="EGGS" unique_id=941677151]
-position = Vector2(240.99997, -24)
+position = Vector2(234.99997, 40)
 scale = Vector2(0.19074075, 0.14537036)
-texture = ExtResource("5_d2rgw")
+texture = ExtResource("4_6nwul")
 
 [node name="EGGS" type="Area2D" parent="EGGS" unique_id=2116461578]
 position = Vector2(79, 24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EGGS/EGGS" unique_id=838701619]
-position = Vector2(161, 15)
+position = Vector2(148, 13)
 shape = SubResource("RectangleShape2D_pxqgl")
 
 [node name="Main_player#2" parent="." unique_id=1284068795 instance=ExtResource("5_tdw4n")]

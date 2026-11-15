@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ddydn6u84r4e4" path="res://strawberry caku.png" id="5_b3c6n"]
 [ext_resource type="Texture2D" uid="uid://doqj86pmoucr8" path="res://andrew .png" id="6_4hk73"]
 [ext_resource type="Texture2D" uid="uid://d3d6g5upggiv3" path="res://chef.png" id="7_cgnm5"]
+[ext_resource type="AudioStream" uid="uid://bnp6mcoyuserj" path="res://evil and intimidating horse new ver.mp3" id="8_50e7d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g12sc"]
 atlas = ExtResource("4_1w8yw")
@@ -152,3 +153,7 @@ offset_right = 1254.0
 offset_bottom = 632.0
 texture = ExtResource("7_cgnm5")
 expand_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1923166798]
+stream = ExtResource("8_50e7d")
+autoplay = true
